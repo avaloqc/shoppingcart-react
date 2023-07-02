@@ -4,17 +4,13 @@ import { Summary } from "./Summary"
 import ItemDetails from './ItemDetails';
 import { totalItems, totalValueCart} from "../Scripts/itemsPlaceHolder"
 
-import React from "react";
-
 export const ShoppingCartBody = ({ cart }) => {
-  console.log('cart :>> ', cart);
 
   const [collection, setCollection] = useState(cart);
-  const [total_items, setTotal_items ] = useState(totalItems(cart));
+  const [total_items, setTotal_items] = useState(totalItems(cart));
   const [total_amount, setTotal_amount] = useState(totalValueCart(cart));
  
   function updateCart(collection) {
-    console.log('newcollection :>> ', collection);
     setCollection(collection)
     setTotal_items(totalItems(collection))
     setTotal_amount(totalValueCart(collection))
@@ -30,7 +26,8 @@ export const ShoppingCartBody = ({ cart }) => {
                 group={items}
                 chave={itemIndex}
                 collection={collection}
-                updateCart={updateCart}/>
+                updateCart={updateCart}
+              />
             </ListGroup.Item>
           ))}
         </ListGroup>

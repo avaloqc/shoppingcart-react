@@ -3,22 +3,25 @@ import { Image, Col, Row, Stack } from 'react-bootstrap';
 import { faSquarePlus, faSquareMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function ItemDetails({ group, chave, collection, updateCart}) {
+export default function ItemDetails({ group, chave, collection, updateCart }) {
 
   var [quantity, setQuantity] = useState(group.amount);
 
   function handleClickAdd() {
-    console.log('chave :>> ', chave);
-    quantity++
+    if (group.item.stock > 0) {
+      quantity++
+      group.item.stock--
+    }
     setQuantity(quantity)
     group.amount = quantity
-    console.log('cantidad :>> ', group.amount);
     collection[chave] = group
     updateCart(collection)
   }
 
   function handleClickRem() {
-    quantity--
+    if (quantity > 0) {
+      quantity--
+    }
     group.amount = quantity
     setQuantity(quantity)
     collection[chave] = group
