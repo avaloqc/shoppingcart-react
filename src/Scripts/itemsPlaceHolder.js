@@ -11,14 +11,6 @@ let item =
   "stock": 10,
 }
 
-// let i = 0;
-// let j = 0;
-// while (i < 5) {
-//   cart.push({"item": item, "amount": quantities[i]});
-//   i++;
-// }
-// console.log(cart)
-
 var cart = [
   {
     "item": 
@@ -96,14 +88,6 @@ var cart = [
 ]
 
 
-
-// while (j < items.length) {
-//   quantities.push(1);
-//   j++;
-// }
-
-
-
 function totalValueCart2 (items, quantities) {
   let total = 0;
   items.forEach((item, iIndex) => {
@@ -128,8 +112,6 @@ function totalValueCart (cart) {
   });
   return sum;
 }
-// console.log(totalItems(cart));
-// console.log(totalValueCart(cart));
 
 export {
   totalValueCart,
