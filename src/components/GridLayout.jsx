@@ -1,21 +1,22 @@
 
-// import { createContext, useState } from 'react';
 import { ShoppingCartHeader } from './ShoppingCartHeader';
 import { ShoppingCartBody } from './ShoppingCartBody';
-import { cart } from '../Scripts/itemsPlaceHolder'
+import { ShoppingContext } from '../storage/ShoppingContext';
+import { init_cart_items, api_item_data } from "../Scripts/itemsPlaceHolder"
 
-// export const ShoppingContext = createContext({});
+var initialState = { 
+  "type": null,
+  "carrinho": init_cart_items, 
+  "items_data": api_item_data,
+  "activeItem": null,
+}
 
 export const GridLayout = () => {
-
-  // var [uQuantities, setQuantities] = useState(quantities)
   
   return (
-      // <ShoppingContext.Provider value={{items, quantities}}>
-        <>
-          <ShoppingCartHeader cart={cart}  />
-          <ShoppingCartBody cart={cart} />
-        </>
-      // </ShoppingContext.Provider>
+    <ShoppingContext initialState={initialState}>
+      <ShoppingCartHeader/>
+      <ShoppingCartBody/>
+    </ShoppingContext>
   )
 }
