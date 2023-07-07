@@ -19,7 +19,6 @@ export const ShippingForm = (props) => {
       default: 
         props.UpdatePriceShipping(sp_fees[0])
     }
-    console.log('selection', selection)
   }
 
   return (

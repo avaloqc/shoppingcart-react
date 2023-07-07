@@ -6,7 +6,6 @@ export const DiscountForm = (props) => {
   var activeBtn = { variant: "primary", active: true, disabled: false }
   var [input, setInput] = useState('')
   const [couponMessg, setCouponMessg] = useState('')
-
   const [btnStatus, setBtnStatuts] = useState(defaultBtn)
 
   var discount_codes = [
@@ -30,7 +29,6 @@ export const DiscountForm = (props) => {
   function checkCode(e) {
     let code = e.target.value
     setInput(code)
-    console.log('code', code)
     if (code.length === 6) {
       setBtnStatuts(activeBtn)
     } else {
@@ -41,15 +39,9 @@ export const DiscountForm = (props) => {
 
   function applyDiscount(e) {
     e.preventDefault()
-
     var coupon = validCoupon(input.toLocaleUpperCase());
-    console.log('input when i click:  ', input)
-    console.log('coupon', coupon)
-
 
     if (coupon) {
-      console.log('coupon state', coupon)
-      console.log(notExpiredCoupon(coupon));
       props.UpdatePriceDiscount(notExpiredCoupon(coupon).value)
       setCouponMessg(notExpiredCoupon(coupon).text)
     }
@@ -65,12 +57,11 @@ export const DiscountForm = (props) => {
     let discount_text = (currentDate() <= discount.exp_date) ? discounts_text[1] : discounts_text[0];
     coupon.text=discount_text
     if (discount_text === discounts_text[0]) {
-      coupon.text=discount_text
-      console.log('discount.value', discount.value)
+      coupon.text = discount_text
       if (discount.value<1) coupon.value=1
       else coupon.value=0
     } else {
-      coupon.text=discount_text
+      coupon.text = discount_text
     }
     return coupon;
   }

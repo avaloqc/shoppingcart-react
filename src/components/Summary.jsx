@@ -5,7 +5,6 @@ import { DiscountForm } from './DiscountForm';
 import { Checkout } from './Checkout';
 import { SummaryHeader } from './SummaryHeader';
 
-
 export const Summary = ({ total_items, total_amount }) => {
 
   var [discount, setDiscount] = useState(1)
@@ -13,10 +12,8 @@ export const Summary = ({ total_items, total_amount }) => {
 
   function UpdatePriceShipping(shippingFee) {
     setShippingFee(shippingFee)
-    console.log('shippingFee', shippingFee)
   }
   function UpdatePriceDiscount(discount) {
-    console.log('total_amount', total_amount)
     setDiscount(discount)
   }
 
