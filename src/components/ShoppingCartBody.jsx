@@ -3,7 +3,6 @@ import { Summary } from "./Summary"
 import ItemDetails from './ItemDetails';
 import { useShoppingContext } from "../storage/ShoppingContext";
 
-
 export const ShoppingCartBody = () => {
   const { state } = useShoppingContext();
 
@@ -18,7 +17,9 @@ export const ShoppingCartBody = () => {
       })
       return obj
     })
-
+  
+  const items = state.carrinho.reduce(
+    (sum, current) => sum + current.amount, 0)
 
   return (
     <Row>
@@ -32,7 +33,7 @@ export const ShoppingCartBody = () => {
         </ListGroup>
       </Col>
       <Col md={4} className='summary-side'>
-        <Summary total_items={25} total_amount={25} />
+        <Summary total_items={items} total_amount={25} />
       </Col>
     </Row>
   )
