@@ -1,32 +1,23 @@
-import { useState } from 'react';
 import { Image, Col, Row, Stack } from 'react-bootstrap';
 import { faSquarePlus, faSquareMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useShoppingContext } from "../storage/ShoppingContext";
+import { addOneItemAction, removeOneItemAction } from '../storage/actions';
 
-export default function ItemDetails({ group, chave, collection, updateCart }) {
-
-  var [quantity, setQuantity] = useState(group.amount);
+export default function ItemDetails({ group, index }) {
+ 
+  const { dispatch } = useShoppingContext();
 
   function handleClickAdd() {
     if (group.item.stock > 0) {
-      quantity++
-      group.item.stock--
+      dispatch(addOneItemAction(index))
     }
-    setQuantity(quantity)
-    group.amount = quantity
-    collection[chave] = group
-    updateCart(collection)
   }
 
   function handleClickRem() {
-    if (quantity > 0) {
-      quantity--
-      group.item.stock++
+    if (group.amount > 0) {
+      dispatch(removeOneItemAction(index))
     }
-    group.amount = quantity
-    setQuantity(quantity)
-    collection[chave] = group
-    updateCart(collection)
   }
 
   return (
@@ -39,12 +30,12 @@ export default function ItemDetails({ group, chave, collection, updateCart }) {
         </Stack>
       </Col>
       <Col className='cart-items'>
-        {quantity > 0
+        {group.amount > 0
           ? <span onClick={handleClickRem} className='btn btn-add-rem'><FontAwesomeIcon icon={faSquareMinus} /></span>
           : <span className='btn btn-add-rem disabled'><FontAwesomeIcon icon={faSquareMinus} opacity={0.2} /></span>
         }
         <span className='quantidade'> {group.amount} </span>
-        {( group.item.stock > 0 )
+        {(group.item.stock > 0)
           ? <span onClick={handleClickAdd} className='btn btn-add-rem'><FontAwesomeIcon icon={faSquarePlus} /></span>
           : <span className='btn btn-add-rem disabled'><FontAwesomeIcon icon={faSquarePlus} opacity={0.2} /></span>
         }

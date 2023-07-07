@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap"
 import { totalItems } from "../Scripts/itemsPlaceHolder"
 
-export const ShoppingCartHeader = ({ cart }) => {
+export const ShoppingCartHeader = () => {
     return (
       <Row>
         <Col md={8} className='shopping-header shopping-header-items'>
