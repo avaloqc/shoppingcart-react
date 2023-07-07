@@ -1,19 +1,7 @@
 
-var quantities = [1,2,2,2,1]
-var cart2 = []
-let item =
-{
-  "uuid": "123hyujkiol",
-  "picture_url": "https://picsum.photos/100/100",
-  "price": 10,
-  "name": 'Camisa',
-  "descr": "Cotton-shirt",
-  "stock": 10,
-}
-
 var cart = [
   {
-    "item": 
+    "item":
     {
       "uuid": "123hyujkiol",
       "picture_url": "https://picsum.photos/100/100",
@@ -25,7 +13,7 @@ var cart = [
     "amount": 3
   },
   {
-    "item": 
+    "item":
     {
       "uuid": "12445555jjjiol",
       "picture_url": "https://picsum.photos/101/100",
@@ -37,7 +25,7 @@ var cart = [
     "amount": 2
   },
   {
-    "item": 
+    "item":
     {
       "uuid": "5678ujikliol",
       "picture_url": "https://picsum.photos/102/100",
@@ -49,7 +37,7 @@ var cart = [
     "amount": 1
   },
   {
-    "item": 
+    "item":
     {
       "uuid": "560popliol",
       "picture_url": "https://picsum.photos/107/100",
@@ -61,7 +49,7 @@ var cart = [
     "amount": 1
   },
   {
-    "item": 
+    "item":
     {
       "uuid": "56ghjkyyliol",
       "picture_url": "https://picsum.photos/108/100",
@@ -73,7 +61,7 @@ var cart = [
     "amount": 1
   },
   {
-    "item": 
+    "item":
     {
       "uuid": "345ghjiopjiol",
       "picture_url": "https://picsum.photos/108/100",
@@ -84,31 +72,56 @@ var cart = [
     },
     "amount": 2
   },
-  
+
 ]
 
+const init_cart_items = 
+cart.map(element => {
+  var obj = {
+    "item_id": element.item.uuid,
+    "amount": element.amount
+  }
+  return obj
+})
 
-function totalValueCart2 (items, quantities) {
-  let total = 0;
-  items.forEach((item, iIndex) => {
-    total = total + item.price * quantities[iIndex]
-  });
-  return total;
-}
+var api_item_data = cart.map(element => element.item)
 
-function totalItems (cart) {
+var cart2 = 
+init_cart_items.map(element => {
+  var obj = {}
+  api_item_data.map(item => {
+    if (item.uuid === element.item_id) {
+      obj = {
+        "item": item,
+        "amount": element.amount
+      }
+    }
+    return obj
+  })
+  return obj
+})
+
+// function totalValueCart2(items, quantities) {
+//   let total = 0;
+//   items.forEach((item, iIndex) => {
+//     total = total + item.price * quantities[iIndex]
+//   });
+//   return total;
+// }
+
+function totalItems(cart) {
   let total = 0
   // return quantities.reduce((partialSum, a) => partialSum + a, 0);
   cart.forEach(element => {
-    total=total + element.amount;
+    total = total + element.amount;
   });
   return total;
 }
 
-function totalValueCart (cart) {
+function totalValueCart(cart) {
   let sum = 0
   cart.forEach(element => {
-    sum = sum + element.amount*element.item.price;
+    sum = sum + element.amount * element.item.price;
   });
   return sum;
 }
@@ -116,5 +129,6 @@ function totalValueCart (cart) {
 export {
   totalValueCart,
   totalItems,
-  cart
+  api_item_data,
+  init_cart_items
 };
