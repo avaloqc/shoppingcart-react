@@ -2,7 +2,7 @@ import { Image, Col, Row, Stack } from 'react-bootstrap';
 import { faSquarePlus, faSquareMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useShoppingContext } from "../storage/ShoppingContext";
-import { addOneItemAction, removeOneItemAction } from '../storage/actions';
+import { addOneToCartAction, removeOneFromCartAction } from '../storage/actions';
 
 export default function ItemDetails({ group, index }) {
  
@@ -10,13 +10,13 @@ export default function ItemDetails({ group, index }) {
 
   function handleClickAdd() {
     if (group.item.stock > 0) {
-      dispatch(addOneItemAction(index))
+      dispatch(addOneToCartAction(index))
     }
   }
 
   function handleClickRem() {
     if (group.amount > 0) {
-      dispatch(removeOneItemAction(index))
+      dispatch(removeOneFromCartAction(index))
     }
   }
 
