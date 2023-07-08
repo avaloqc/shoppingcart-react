@@ -4,7 +4,7 @@ var cart = [
     "item":
     {
       "uuid": "123hyujkiol",
-      "picture_url": "https://picsum.photos/100/100",
+      "picture_url": "https://picsum.photos/200/300?101",
       "price": 10,
       "name": 'Camisa',
       "descr": "Cotton-shirt",
@@ -16,10 +16,10 @@ var cart = [
     "item":
     {
       "uuid": "12445555jjjiol",
-      "picture_url": "https://picsum.photos/101/100",
+      "picture_url": "https://picsum.photos/200/300?102",
       "price": 20,
       "name": 'Camisa sem gola',
-      "descr": "",
+      "descr": "Camisa algodão",
       "stock": 3,
     },
     "amount": 2
@@ -28,9 +28,9 @@ var cart = [
     "item":
     {
       "uuid": "5678ujikliol",
-      "picture_url": "https://picsum.photos/102/100",
+      "picture_url": "https://picsum.photos/200/300?103",
       "price": 10,
-      "name": 'Camisa',
+      "name": 'Camisa A',
       "descr": "T-shirt",
       "stock": 4,
     },
@@ -40,9 +40,9 @@ var cart = [
     "item":
     {
       "uuid": "560popliol",
-      "picture_url": "https://picsum.photos/107/100",
+      "picture_url": "https://picsum.photos/100/100?107",
       "price": 15,
-      "name": 'Camisa',
+      "name": 'Camisa B',
       "descr": "T-shirt",
       "stock": 4,
     },
@@ -52,9 +52,9 @@ var cart = [
     "item":
     {
       "uuid": "56ghjkyyliol",
-      "picture_url": "https://picsum.photos/108/100",
+      "picture_url": "https://picsum.photos/100/100?106",
       "price": 12,
-      "name": 'Camisa',
+      "name": 'Camisa C',
       "descr": "T-shirt",
       "stock": 4,
     },
@@ -64,9 +64,9 @@ var cart = [
     "item":
     {
       "uuid": "345ghjiopjiol",
-      "picture_url": "https://picsum.photos/108/100",
+      "picture_url": "https://picsum.photos/100/100?100",
       "price": 12,
-      "name": 'Camisa',
+      "name": 'Camisa D',
       "descr": "T-shirt",
       "stock":3,
     },
