@@ -8,7 +8,7 @@ var cart = [
       "price": 10,
       "name": 'Camisa',
       "descr": "Cotton-shirt",
-      "stock": 10,
+      "stock": 2,
     },
     "amount": 3
   },
@@ -20,7 +20,7 @@ var cart = [
       "price": 20,
       "name": 'Camisa sem gola',
       "descr": "",
-      "stock": 10,
+      "stock": 3,
     },
     "amount": 2
   },
@@ -32,7 +32,7 @@ var cart = [
       "price": 10,
       "name": 'Camisa',
       "descr": "T-shirt",
-      "stock": 9,
+      "stock": 4,
     },
     "amount": 1
   },
@@ -44,7 +44,7 @@ var cart = [
       "price": 15,
       "name": 'Camisa',
       "descr": "T-shirt",
-      "stock": 9,
+      "stock": 4,
     },
     "amount": 1
   },
@@ -56,7 +56,7 @@ var cart = [
       "price": 12,
       "name": 'Camisa',
       "descr": "T-shirt",
-      "stock": 9,
+      "stock": 4,
     },
     "amount": 1
   },
@@ -68,7 +68,7 @@ var cart = [
       "price": 12,
       "name": 'Camisa',
       "descr": "T-shirt",
-      "stock": 5,
+      "stock":3,
     },
     "amount": 2
   },
@@ -101,34 +101,7 @@ init_cart_items.map(element => {
   return obj
 })
 
-// function totalValueCart2(items, quantities) {
-//   let total = 0;
-//   items.forEach((item, iIndex) => {
-//     total = total + item.price * quantities[iIndex]
-//   });
-//   return total;
-// }
-
-function totalItems(cart) {
-  let total = 0
-  // return quantities.reduce((partialSum, a) => partialSum + a, 0);
-  cart.forEach(element => {
-    total = total + element.amount;
-  });
-  return total;
-}
-
-function totalValueCart(cart) {
-  let sum = 0
-  cart.forEach(element => {
-    sum = sum + element.amount * element.item.price;
-  });
-  return sum;
-}
-
 export {
-  totalValueCart,
-  totalItems,
   api_item_data,
   init_cart_items
 };
