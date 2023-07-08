@@ -1,13 +1,74 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #ddd;
+  vertical-align: middle;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.card {
+  min-height: 60vh;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: transparent;
+  min-height: 75vh;
+}
+
+.cart-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopping-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0%;
+  margin-bottom: 5vh;
+  text-transform: uppercase;
+}
+
+.shopping-header-items {
+  justify-content: space-between;
+  margin: 3px;
+}
+
+.summary-side {
+  background-color: #ddd;
+  min-height: 75vh;
+}
+
+.item-descr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.quantidade {
+  padding: 8px;
+}
+
+.status-discount-code {
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-add-rem:hover {
+  border: none;
+  box-shadow: none;
+}
+.btn-add-rem {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-add-rem:disabled {
+  border: none;
+  box-shadow: none;
 }
