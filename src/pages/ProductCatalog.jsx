@@ -9,11 +9,11 @@ export function ProductCatalog() {
     <>
       <h3>PRODUTOS DISPONÍVES</h3>
       <Container>
-        <Row>
+        <Row className="m-5 justify-content-center">
           {state.items_data.map((item, key) => (
-          <Col ms={3}>
-            <CardItem produto={item} index={key}/>
-          </Col>
+            <Col md={3}>
+                <CardItem produto={item} index={key}/>
+            </Col>
           ))}
         </Row>
       </Container>

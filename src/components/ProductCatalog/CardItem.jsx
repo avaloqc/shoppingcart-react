@@ -3,8 +3,8 @@ import Card from 'react-bootstrap/Card';
 
 export const CardItem = ({ produto, key }) => {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={produto.picture_url} fluid />
+    <Card className='card w-80 h-80'>
+      <Card.Img variant="top" src={produto.picture_url} />
       <Card.Body>
         <Card.Title>{produto.name}</Card.Title>
         <Card.Text>
