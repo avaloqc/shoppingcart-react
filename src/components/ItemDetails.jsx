@@ -22,7 +22,7 @@ export default function ItemDetails({ group, index }) {
 
   return (
     <Row>
-      <Col className='cart-items'><Image src={group.item.picture_url} fluid /></Col>
+      <Col className='cart-items'><Image src={group.item.picture_url} thumbnail/></Col>
       <Col className='cart-items'>
         <Stack className='cart-items'>
           <div>{group.item.name}</div>
