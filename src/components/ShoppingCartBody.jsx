@@ -6,20 +6,22 @@ import { useShoppingContext } from "../storage/ShoppingContext";
 export const ShoppingCartBody = () => {
   const { state } = useShoppingContext();
 
-  const cart =
-    state.carrinho.map(element => {
-      var obj = {}
-      state.items_data.map(item => {
-        if (item.uuid === element.item_id) {
-          obj = { "item": item, "amount": element.amount }
-          return obj
-        }
-      })
-      return obj
+  const cart = state.carrinho.map(element => {
+    var obj = {}
+    state.items_data.map(item => {
+      if (item.uuid === element.item_id) {
+        obj = { "item": item, "amount": element.amount }
+        return obj
+      }
     })
-  
-  const items = state.carrinho.reduce(
+    return obj
+  })
+
+  const total_items = state.carrinho.reduce(
     (sum, current) => sum + current.amount, 0)
+
+  const total_amount = cart.map(element => (element.item.price*element.amount)).reduce(
+    (sum, current) => sum + current, 0)
 
   return (
     <Row>
@@ -33,7 +35,7 @@ export const ShoppingCartBody = () => {
         </ListGroup>
       </Col>
       <Col md={4} className='summary-side'>
-        <Summary total_items={items} total_amount={25} />
+        <Summary total_items={total_items} total_amount={total_amount} />
       </Col>
     </Row>
   )
