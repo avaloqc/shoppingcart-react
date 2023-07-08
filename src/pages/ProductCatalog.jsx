@@ -4,16 +4,15 @@ import { useShoppingContext } from "../storage/ShoppingContext"
 
 export function ProductCatalog() {
   const { state, dispatch } = useShoppingContext();
-  var test = [0,0,0,0,0,0]
 
   return (
     <>
-      <h1>ITENS DISPONÍVES</h1>
+      <h3>PRODUTOS DISPONÍVES</h3>
       <Container>
         <Row>
-          {test.map((item, key) => (
+          {state.items_data.map((item, key) => (
           <Col ms={3}>
-            <CardItem/>
+            <CardItem produto={item} index={key}/>
           </Col>
           ))}
         </Row>
