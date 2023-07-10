@@ -8,3 +8,7 @@ export const removeOneFromCartAction = (index) => ({
   payload: index
 });
 
+export const setButtonOffAction = (index) => ({
+  type: 'button off',
+  payload: index
+});
