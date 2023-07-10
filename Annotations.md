@@ -46,4 +46,5 @@ O estado inicial deveria ter os itens do carrinho (as quantidades) deles e o val
 initialState = {
     "carrinho": [{},{},{}],    ----------->   (stock)
     "items_data": [{},{},{}],  ----------->   (amount)
+    "buttons": activeButtons
 }
