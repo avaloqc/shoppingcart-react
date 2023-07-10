@@ -28,6 +28,13 @@ export function reducer(state, action) {
           ...state.items_data.slice(0, action.payload), stockRestored , ...state.items_data.slice(action.payload+1)
         ]
       }
+      case 'button off':
+      return {
+        ...state,
+        buttons: [
+          ...state.buttons.slice(0, action.payload), true , ...state.buttons.slice(action.payload+1)
+        ]
+      }
     default: {}
   }
 }

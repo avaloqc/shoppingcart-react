@@ -10,7 +10,7 @@ var cart = [
       "descr": "Cotton-shirt",
       "stock": 2,
     },
-    "amount": 3
+    "amount": 0
   },
   {
     "item":
@@ -22,7 +22,7 @@ var cart = [
       "descr": "Camisa algodão",
       "stock": 3,
     },
-    "amount": 2
+    "amount": 0
   },
   {
     "item":
@@ -34,7 +34,7 @@ var cart = [
       "descr": "T-shirt",
       "stock": 4,
     },
-    "amount": 1
+    "amount": 0
   },
   {
     "item":
@@ -46,7 +46,7 @@ var cart = [
       "descr": "T-shirt",
       "stock": 4,
     },
-    "amount": 1
+    "amount": 0
   },
   {
     "item":
@@ -58,7 +58,7 @@ var cart = [
       "descr": "T-shirt",
       "stock": 4,
     },
-    "amount": 1
+    "amount": 0
   },
   {
     "item":
@@ -70,7 +70,7 @@ var cart = [
       "descr": "T-shirt",
       "stock":3,
     },
-    "amount": 2
+    "amount": 0
   },
 
 ]
@@ -101,7 +101,15 @@ init_cart_items.map(element => {
   return obj
 })
 
+var activeButtons = []
+console.log(api_item_data.length)
+for (let i=0; i<api_item_data.length; i++) {
+  activeButtons.push(false)
+}
+
+
 export {
   api_item_data,
-  init_cart_items
+  init_cart_items,
+  activeButtons
 };

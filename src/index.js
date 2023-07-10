@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { ShoppingCart } from './pages/ShoppingCart';
 import { ProductCatalog } from './pages/ProductCatalog';
 import { ShoppingContext } from './storage/ShoppingContext';
-import { init_cart_items, api_item_data } from './Scripts/itemsPlaceHolder';
+import { init_cart_items, api_item_data, activeButtons } from './Scripts/itemsPlaceHolder';
 import './index.css'
 
 var initialState = {
@@ -17,6 +17,7 @@ var initialState = {
   "carrinho": init_cart_items,
   "items_data": api_item_data,
   "activeItem": null, 
+  "buttons": activeButtons
 }
 
 const router = createBrowserRouter([
