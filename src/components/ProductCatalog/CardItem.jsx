@@ -13,7 +13,7 @@ export const CardItem = ({ produto, index }) => {
   }
 
   return (
-    <Card className='card w-80 h-80'>
+    <Card className='card w-80 h-80 d-flex flex-wrap'>
       <Card.Img variant="top" src={produto.picture_url} />
       <Card.Body>
         <Card.Title>{produto.name}</Card.Title>
