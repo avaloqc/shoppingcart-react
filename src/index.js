@@ -13,10 +13,8 @@ import { init_cart_items, api_item_data, activeButtons } from './Scripts/itemsPl
 import './index.css'
 
 var initialState = {
-  "type": null,
   "carrinho": init_cart_items,
   "items_data": api_item_data,
-  "activeItem": null, 
   "buttons": activeButtons
 }
 
