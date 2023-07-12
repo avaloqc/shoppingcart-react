@@ -1,4 +1,5 @@
 import { Row, Col } from "react-bootstrap"
+import { Link } from "react-router-dom";
 import { useShoppingContext } from "../storage/ShoppingContext"
 
 export const ShoppingCartHeader = () => {
@@ -7,6 +8,7 @@ export const ShoppingCartHeader = () => {
       <Row>
         <Col md={8} className='shopping-header shopping-header-items'>
           <div>carrinho de compras</div>
+          <div><Link to='/'>voltar ao catálogo</Link></div>
           <div>{state.carrinho.length} itens diferentes</div>
         </Col>
         <Col className='shopping-header'>resumo</Col>
