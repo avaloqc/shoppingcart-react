@@ -18,7 +18,10 @@ export const removeOneFromCartAction = (index) => ({
   payload: index
 });
 
-export const setButtonOffAction = (index) => ({
-  type: 'button off',
-  payload: index
-});
+export const setButtonOffAction = (index) => {
+  const items = cartService.saveButtonState(index)
+  return {
+    type: 'button off',
+    payload: index
+  }
+}

@@ -1,4 +1,5 @@
 
+import { activeButtons } from "../Scripts/itemsPlaceHolder";
 export const getCart =  () => {
   return JSON.parse(localStorage.getItem('carrinho')) || [];
 }
@@ -21,4 +22,21 @@ const createItem = (itemId) => {
 
 const saveCart = (cart) => {
   localStorage.setItem('carrinho', JSON.stringify(cart));
+}
+
+
+//??------------------------------------------------------------
+export const getPurchaseButtons =  () => {
+  return JSON.parse(localStorage.getItem('purchaseButtons')) || activeButtons;
+}
+
+export const saveButtonState =  (index) => {
+  const items = getPurchaseButtons();
+  items[index] = true
+  savePurchaseButtons(items);
+  return items;
+}
+
+const savePurchaseButtons = (items) => {
+  localStorage.setItem('purchaseButtons', JSON.stringify(items));
 }

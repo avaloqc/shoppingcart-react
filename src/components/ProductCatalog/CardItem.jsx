@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useShoppingContext } from '../../storage/ShoppingContext';
-import { addOneToCartAction, setButtonOffAction, addItemtoCartAction } from '../../storage/actions';
+import { setButtonOffAction, addItemtoCartAction } from '../../storage/actions';
 
 export const CardItem = ({ produto, index }) => {
 
@@ -21,7 +21,7 @@ export const CardItem = ({ produto, index }) => {
           {produto.descr}
           <h5>R$ {produto.price}</h5>
         </Card.Text>
-        { !state.buttons[index] 
+        { !state.purchaseButtons[index] 
         ? <Button onClick={handleClick} variant="success">Adicionar ao carrinho</Button>
         : <Button onClick={handleClick} variant="secondary" active={false} disabled>No carrinho</Button>
         }

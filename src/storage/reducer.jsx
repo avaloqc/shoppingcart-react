@@ -40,8 +40,8 @@ export function reducer(state, action) {
     case 'button off':
       return {
         ...state,
-        buttons: [
-          ...state.buttons.slice(0, action.payload), true, ...state.buttons.slice(action.payload + 1)
+        purchaseButtons: [
+          ...state.purchaseButtons.slice(0, action.payload), true, ...state.purchaseButtons.slice(action.payload + 1)
         ]
       }
     default: { }
