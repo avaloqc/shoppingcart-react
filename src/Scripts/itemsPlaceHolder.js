@@ -4,7 +4,7 @@ var cart = [
     "item":
     {
       "uuid": "123hyujkiol",
-      "picture_url": "https://picsum.photos/200/300?101",
+      "picture_url": "https://picsum.photos/100?101",
       "price": 10,
       "name": 'Camisa',
       "descr": "Cotton-shirt",
@@ -16,7 +16,7 @@ var cart = [
     "item":
     {
       "uuid": "12445555jjjiol",
-      "picture_url": "https://picsum.photos/200/300?102",
+      "picture_url": "https://picsum.photos/100?102",
       "price": 20,
       "name": 'Camisa sem gola',
       "descr": "Camisa algodão",
@@ -28,7 +28,7 @@ var cart = [
     "item":
     {
       "uuid": "5678ujikliol",
-      "picture_url": "https://picsum.photos/200/300?103",
+      "picture_url": "https://picsum.photos/100?103",
       "price": 10,
       "name": 'Camisa A',
       "descr": "T-shirt",
@@ -40,7 +40,7 @@ var cart = [
     "item":
     {
       "uuid": "560popliol",
-      "picture_url": "https://picsum.photos/100/100?107",
+      "picture_url": "https://picsum.photos/100?107",
       "price": 15,
       "name": 'Camisa B',
       "descr": "T-shirt",
@@ -75,41 +75,14 @@ var cart = [
 
 ]
 
-const init_cart_items = 
-cart.map(element => {
-  var obj = {
-    "item_id": element.item.uuid,
-    "amount": element.amount
-  }
-  return obj
-})
-
 var api_item_data = cart.map(element => element.item)
 
-var cart2 = 
-init_cart_items.map(element => {
-  var obj = {}
-  api_item_data.map(item => {
-    if (item.uuid === element.item_id) {
-      obj = {
-        "item": item,
-        "amount": element.amount
-      }
-    }
-    return obj
-  })
-  return obj
-})
-
 var activeButtons = []
-console.log(api_item_data.length)
 for (let i=0; i<api_item_data.length; i++) {
   activeButtons.push(false)
 }
 
-
 export {
   api_item_data,
-  init_cart_items,
   activeButtons
 };
