@@ -1,14 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useShoppingContext } from '../../storage/ShoppingContext';
-import { addOneToCartAction, setButtonOffAction } from '../../storage/actions';
+import { addOneToCartAction, setButtonOffAction, addItemtoCartAction } from '../../storage/actions';
 
 export const CardItem = ({ produto, index }) => {
 
   const { state, dispatch } = useShoppingContext();
 
   function handleClick () {
-    dispatch(addOneToCartAction(index))
+    dispatch(addItemtoCartAction(produto.uuid))
     dispatch(setButtonOffAction(index))
   }
 

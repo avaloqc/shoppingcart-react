@@ -1,17 +1,26 @@
 export function reducer(state, action) {
   switch (action.type) {
+    case 'add first item':
+      return {
+        ...state,
+        carrinho: [
+          ...state.carrinho,
+          action.payload
+        ],
+      }
     case 'add item':
       let amountIncreased = state.carrinho[action.payload]
-      let stockDecreased = state.items_data[action.payload]
+      let uuid = state.carrinho[action.payload].item_id
+      let stockDecreased = state.items_data[state.items_data.findIndex((element) => (element.uuid === uuid))]
       amountIncreased.amount++
       stockDecreased.stock--
       return {
         ...state,
         carrinho: [
-          ...state.carrinho.slice(0, action.payload), amountIncreased , ...state.carrinho.slice(action.payload+1)
+          ...state.carrinho.slice(0, action.payload), amountIncreased, ...state.carrinho.slice(action.payload + 1)
         ],
         items_data: [
-          ...state.items_data.slice(0, action.payload), stockDecreased , ...state.items_data.slice(action.payload+1)
+          ...state.items_data.slice(0, action.payload), stockDecreased, ...state.items_data.slice(action.payload + 1)
         ]
       }
     case 'remove item':
@@ -22,19 +31,19 @@ export function reducer(state, action) {
       return {
         ...state,
         carrinho: [
-          ...state.carrinho.slice(0, action.payload), amountReduced , ...state.carrinho.slice(action.payload+1)
+          ...state.carrinho.slice(0, action.payload), amountReduced, ...state.carrinho.slice(action.payload + 1)
         ],
         items_data: [
-          ...state.items_data.slice(0, action.payload), stockRestored , ...state.items_data.slice(action.payload+1)
+          ...state.items_data.slice(0, action.payload), stockRestored, ...state.items_data.slice(action.payload + 1)
         ]
       }
-      case 'button off':
+    case 'button off':
       return {
         ...state,
         buttons: [
-          ...state.buttons.slice(0, action.payload), true , ...state.buttons.slice(action.payload+1)
+          ...state.buttons.slice(0, action.payload), true, ...state.buttons.slice(action.payload + 1)
         ]
       }
-    default: {}
+    default: { }
   }
 }
