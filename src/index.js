@@ -18,7 +18,6 @@ var initialState = {
   "items_data": api_item_data,
   "purchaseButtons": getPurchaseButtons()
 }
-
 const router = createBrowserRouter([
   {
     path: "/",
