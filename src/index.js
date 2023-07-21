@@ -9,15 +9,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { ShoppingCart } from './pages/ShoppingCart';
 import { ProductCatalog } from './pages/ProductCatalog';
 import { ShoppingContext } from './storage/ShoppingContext';
-import { init_cart_items, api_item_data, activeButtons } from './Scripts/itemsPlaceHolder';
+import { api_item_data } from './Scripts/itemsPlaceHolder';
+import { getCart, getPurchaseButtons } from './services/cartServices';
 import './index.css'
 
 var initialState = {
-  "carrinho": init_cart_items,
+  "carrinho": getCart(),
   "items_data": api_item_data,
-  "buttons": activeButtons
+  "purchaseButtons": getPurchaseButtons()
 }
-
 const router = createBrowserRouter([
   {
     path: "/",
