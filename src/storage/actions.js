@@ -2,12 +2,15 @@ import * as cartService from '../services/cartServices'
 import { activeButtons } from '../Scripts/itemsPlaceHolder';
 import { getPurchaseButtons } from '../services/cartServices';
 
-export const addOneToCartAction = (index) => ({
-  type: 'add item',
-  payload: index
-});
+export const addOneToCartAction = (index) => {
+  cartService.updateAmountOfItem("add",index)
+  return {
+    type: 'add item',
+    payload: index
+  }
+}
 
-export const addItemtoCartAction = (itemId) => {
+export const addItemToCartAction = (itemId) => {
   const item = cartService.saveItemInCart(itemId)
   return {
     type: 'add first item',
@@ -15,10 +18,13 @@ export const addItemtoCartAction = (itemId) => {
   }
 }
 
-export const removeOneFromCartAction = (index) => ({
-  type: 'remove item',
-  payload: index
-});
+export const removeOneFromCartAction = (index) => {
+  cartService.updateAmountOfItem("remove",index)
+  return {
+    type: 'remove item',
+    payload: index
+  }
+}
 
 export const emptyCartAction = () => {
   cartService.savePurchaseButtons(activeButtons)

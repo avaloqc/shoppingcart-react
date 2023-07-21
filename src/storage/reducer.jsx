@@ -41,8 +41,13 @@ export function reducer(state, action) {
       return {
         ...state,
         purchaseButtons: [
-          ...state.purchaseButtons.slice(0, action.payload), true, ...state.purchaseButtons.slice(action.payload + 1)
+          ...state.purchaseButtons.slice(0, action.payload), false, ...state.purchaseButtons.slice(action.payload + 1)
         ]
+      }
+    case 'empty cart':
+      return {
+        ...state,
+        carrinho: [],
       }
     default: { }
   }
